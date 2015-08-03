@@ -63,7 +63,8 @@ public class MainController {
 			Advertisement adv = new Advertisement( name, shortDesc, longDesc, phone, price, photo.isEmpty() ? null
 					: new Photo( photo.getOriginalFilename(), photo.getBytes() ) );
 			advDAO.add( adv );
-			return new ModelAndView( "index", "advs", advDAO.list() );
+			// return new ModelAndView( "index", "advs", advDAO.list() );
+			return new ModelAndView( "redirect:/" );
 		}
 		catch( IOException ex ) {
 			response.setStatus( HttpServletResponse.SC_INTERNAL_SERVER_ERROR );
