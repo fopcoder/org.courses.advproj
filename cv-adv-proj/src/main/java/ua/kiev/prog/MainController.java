@@ -36,7 +36,8 @@ public class MainController {
 	@RequestMapping( "/delete" )
 	public ModelAndView delete( @RequestParam( value = "id" ) long id ) {
 		advDAO.delete( id );
-		return new ModelAndView( "index", "advs", advDAO.list() );
+		// return new ModelAndView( "index", "advs", advDAO.list() );
+		return new ModelAndView( "redirect:/" );
 	}
 
 	@RequestMapping( "/image/{file_id}" )
